@@ -1,0 +1,29 @@
+<div class="container-fluid container-fluid-custom pb-5 mb-5">
+    <div class="row mb-4">
+        <div class="col">
+            <h2>Search Result</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <% if(searchResults != '') { %>
+            <% searchResults.forEach(function (note, index) { %>
+                <div class="col-sm-3 mb-4">
+                    <div class="card border-primary" style="min-height: 210px">
+                        <a href="/dashboard/item/<%= note._id %>" class="card-body text-decoration-none">
+                            <h5 class="card-title"><%= note.title %></h5>
+                            <p class="card-text"><%= note.body %></p>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="row">
+                <div class="col">
+                    <p>No items found.</p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+</div>

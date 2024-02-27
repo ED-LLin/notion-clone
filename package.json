@@ -1,0 +1,23 @@
+{
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.4.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.12.6",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "dependencies": {
+    "punycode": "^2.3.1"
+  }
+}
