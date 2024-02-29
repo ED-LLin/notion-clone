@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const connectDB = require('./server/config/db');
 const session = require('express-session');
 const passport = require('passport');
-const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -27,10 +27,6 @@ app.use(passport.session());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(methodOverride("_method"));
-
-// Connect to DB
-connectDB();
-
 
 // Static Files
 app.use(express.static('public'));
@@ -55,7 +51,12 @@ app.get('*', function(req,res){
     res.status(404).render("404")
 })
 
-
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
+// Connect to DB and start server
+connectDB().then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(port, () => {
+        console.log(`App listening on port ${port}`);
+    });
+}).catch((err) => {
+    console.error('Failed to connect to MongoDB', err);
 });
