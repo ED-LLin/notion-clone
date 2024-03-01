@@ -21,7 +21,7 @@ passport.use(
         };
 
         try {
-            let user = await User.findOne({ googleId: profile.id });
+            let user = await User.findOne({ googleID: profile.id });
             if (user) {
                 done(null, user);
             } else {
