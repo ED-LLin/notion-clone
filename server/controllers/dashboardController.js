@@ -22,8 +22,8 @@ exports.dashboard = async (req, res) => {
         { $match: {user: mongoose.Types.ObjectId(req.user.id) } },
         {
             $project:{
-                title: { $substr: ["$title", 0, 30]},
-                body: { $substr: ["$body", 0, 100]},
+                title: { $substrCP: ["$title", 0, 30]},
+                body: { $substrCP: ["$body", 0, 100]},
             },
         }
        ])
