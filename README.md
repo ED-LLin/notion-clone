@@ -1,5 +1,4 @@
 # NodeJS Notes App
-[![NodeJS Notes App 教學](http://img.youtube.com/vi/BDo1lgaZuII/0.jpg)](http://www.youtube.com/watch?v=BDo1lgaZuII)
 這個專案是一個基於 Node.js 的筆記應用程式，允許用戶創建、查看、編輯和刪除筆記。此專案參考了 YouTube 影片（[參考影片](https://www.youtube.com/watch?v=BDo1lgaZuII)）並運用了以下技術：
 
 ## 相關技術
